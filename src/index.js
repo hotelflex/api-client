@@ -131,12 +131,11 @@ function processChild(cPath, child, cli) {
   }
 };
 
-function Client(_opts) {
+function Client(environment, authToken) {
   var self = this;
-  var opts = _opts || {};
-  if (opts.authToken) { this.authToken = opts.authToken; }
-  if (!opts.environment) { throw new Error('Missing environment.'); }
-  this.environment = opts.environment;
+  if (authToken) { this.authToken = authToken; }
+  if (!environment) { throw new Error('Missing environment.'); }
+  this.environment = environment;
 
   Object.keys(conf).forEach(function(k) {
     self[k] = processChild('', conf[k], self);
