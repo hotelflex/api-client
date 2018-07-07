@@ -4,14 +4,24 @@ var utils = require('./utils');
 var Entity = require('./Entity');
 var Method = require('./Method');
 var Auth = require('./Auth');
+var Cron = require('./Cron');
+var Email = require('./Email');
 var HotelManagement = require('./HotelManagement');
-// var Integrations = require('./Integrations');
+var Integrations = require('./Integrations');
+var InventoryManagement = require('./InventoryManagement');
+var LinkTracking = require('./LinkTracking');
+var SMS = require('./SMS');
 var UpgradeManagement = require('./UpgradeManagement');
 
 var conf = {
   Auth: Auth,
+  Cron: Cron, //
+  Email: Email, //
   HotelManagement: HotelManagement,
-  // Integrations: Integrations,
+  Integrations: Integrations, //
+  InventoryManagement: InventoryManagement, //
+  LinkTracking: LinkTracking, //
+  SMS: SMS, //
   UpgradeManagement: UpgradeManagement
 };
 
@@ -38,7 +48,7 @@ function request(method, p, data, opts, environment, authToken) {
   var headers = { 'Content-Type': 'application/json' };
   if (authToken) { headers.Authorization = 'Bearer ' + authToken; }
 
-  var v2Svcs = [ 'AU', 'EM', 'UPG' ];
+  var v2Svcs = [ 'AU', 'EM', 'UPG', 'HM' ];
   var isV2 = false;
   for (var i = 0; i < v2Svcs.length; i++) {
     isV2 = p.indexOf(v2Svcs[i]) !== -1;
