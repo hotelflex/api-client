@@ -48,7 +48,7 @@ function request(method, p, data, opts, environment, authToken) {
   var headers = { 'Content-Type': 'application/json' };
   if (authToken) { headers.Authorization = 'Bearer ' + authToken; }
 
-  var v2Svcs = [ 'AU', 'EM', 'UPG', 'HM' ];
+  var v2Svcs = [ 'AU', 'EM', 'UPG', 'HM', 'LNKT', 'SMS' ];
   var isV2 = false;
   for (var i = 0; i < v2Svcs.length; i++) {
     isV2 = p.indexOf(v2Svcs[i]) !== -1;
@@ -78,8 +78,8 @@ function request(method, p, data, opts, environment, authToken) {
         }
 
         if (resp.status >= 400) {
-          return resp.text()
-            .then(function(eText) { reject(new Error(resp.statusText + eText)); })
+          return resp.json()
+            .then(function(e) { reject(new Error(resp.statusText + e.error)); })
             .catch(function(err) { reject(err); })
         }
       })

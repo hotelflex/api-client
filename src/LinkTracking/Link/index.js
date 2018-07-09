@@ -6,11 +6,6 @@ module.exports = new Entity('links', {
     method: 'POST',
     path: '/create'
   }),
-  generateViewerData: new Method({
-    method: 'POST',
-    path: '/{id}/generateViewerData',
-    urlParams: [ 'id' ]
-  }),
   retrieve: new Method({
     method: 'GET',
     path: '/{id}',
