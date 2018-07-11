@@ -19,11 +19,6 @@ module.exports = new Entity('systemManagers', {
   search: new Method({
     method: 'GET'
   }),
-  sendDailyReport: new Method({
-    method: 'POST',
-    path: '/{id}/sendDailyReport',
-    urlParams: [ 'id' ]
-  }),
   setup: new Method({
     method: 'POST',
     path: '/setup'

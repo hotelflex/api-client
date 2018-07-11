@@ -32,10 +32,5 @@ module.exports = new Entity('remarketingCampaigns', {
   }),
   search: new Method({
     method: 'GET'
-  }),
-  sendMessages: new Method({
-    method: 'POST',
-    path: '/{id}/sendMessages',
-    urlParams: [ 'id' ]
   })
 });

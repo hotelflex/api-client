@@ -15,13 +15,13 @@ var UpgradeManagement = require('./UpgradeManagement');
 
 var conf = {
   Auth: Auth,
-  Cron: Cron, //
-  Email: Email, //
+  Cron: Cron,
+  Email: Email,
   HotelManagement: HotelManagement,
-  Integrations: Integrations, //
-  InventoryManagement: InventoryManagement, //
-  LinkTracking: LinkTracking, //
-  SMS: SMS, //
+  Integrations: Integrations,
+  InventoryManagement: InventoryManagement,
+  LinkTracking: LinkTracking,
+  SMS: SMS,
   UpgradeManagement: UpgradeManagement
 };
 
@@ -34,9 +34,9 @@ function convertArgsToList(argsObj) {
   return args;
 };
 
-function getApiUrl(environment, isV2) {
+function getApiUrl(environment) {
   if (environment === 'production') {
-    return isV2 ? 'https://apiv2.hotelflex.io' : 'https://api.hotelflex.io';
+    return 'https://apiv2.hotelflex.io'
   } else if (environment === 'staging') {
     return 'https://api.flexfactory.co';
   } else {
@@ -48,13 +48,7 @@ function request(method, p, data, opts, environment, authToken) {
   var headers = { 'Content-Type': 'application/json' };
   if (authToken) { headers.Authorization = 'Bearer ' + authToken; }
 
-  var v2Svcs = [ 'AU', 'EM', 'UPG', 'HM', 'LNKT', 'SMS' ];
-  var isV2 = false;
-  for (var i = 0; i < v2Svcs.length; i++) {
-    isV2 = p.indexOf(v2Svcs[i]) !== -1;
-    if (isV2) { break; }
-  }
-  var apiUrl = getApiUrl(environment, isV2);
+  var apiUrl = getApiUrl(environment);
 
   var fP
   if (method === 'GET') {
@@ -87,7 +81,7 @@ function request(method, p, data, opts, environment, authToken) {
   });
 };
 
-var sMap = { AU: true, CRON: true, EM: true, HM: true, INT: { BS: true, MEWS: true }, INV: true, LNKT: true, SMS: true, UPG: true };
+var sMap = { AU: true, CRON: true, EM: true, HM: true, INT: { BS: true, MEWS: true, OPERA: true }, INV: true, LNKT: true, SMS: true, UPG: true };
 function fixSvcCode(_p) {
   var paths = _p.split('/');
   var _sMap = sMap

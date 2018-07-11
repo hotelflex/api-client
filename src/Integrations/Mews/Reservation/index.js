@@ -6,10 +6,6 @@ module.exports = new Entity('reservations', {
     method: 'POST',
     path: '/create'
   }),
-  processTripChangeRequestSucceeded: new Method({
-    method: 'POST',
-    path: '/processTripChangeRequestSucceeded'
-  }),
   retrieve: new Method({
     method: 'GET',
     path: '/{id}',
