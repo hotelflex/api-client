@@ -11,6 +11,11 @@ module.exports = new Entity('trips', {
     path: '/{id}',
     urlParams: [ 'id' ]
   }),
+  findByRef: new Method({
+    method: 'GET',
+    path: '/findByRef/{reference}',
+    urlParams: [ 'reference' ]
+  }),
   search: new Method({
     method: 'GET'
   }),
