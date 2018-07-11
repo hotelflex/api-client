@@ -1,5 +1,6 @@
 var path = require('path');
 var fetch = require('isomorphic-fetch');
+var Boom = require('boom');
 var utils = require('./utils');
 var Entity = require('./Entity');
 var Method = require('./Method');
@@ -73,7 +74,7 @@ function request(method, p, data, opts, environment, authToken) {
 
         if (resp.status >= 400) {
           return resp.json()
-            .then(function(e) { reject(new Error(resp.statusText + e.error)); })
+            .then(function(e) { reject(new Boom(e.error, { statusCode: resp.status })); })
             .catch(function(err) { reject(err); })
         }
       })
