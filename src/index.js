@@ -36,7 +36,7 @@ function convertArgsToList(argsObj) {
 
 function getApiUrl(environment) {
   if (environment === 'production') {
-    return 'https://apiv2.hotelflex.io'
+    return 'https://api.hotelflex.io'
   } else if (environment === 'staging') {
     return 'https://api.flexfactory.co';
   } else {
