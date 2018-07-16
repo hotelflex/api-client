@@ -11,5 +11,10 @@ module.exports = new Entity('{id}/notifications', {
     method: 'POST',
     path: '/enable',
     urlParams: [ 'id' ]
+  }),
+  update: new Method({
+    method: 'POST',
+    path: '/update',
+    urlParams: [ 'id' ]
   })
 });

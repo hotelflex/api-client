@@ -3,11 +3,11 @@ var Method = require('../../Method');
 
 module.exports = new Entity('remarketingCampaigns', {
   calcStatsGlobal: new Method({
-    method: 'GET',
+    method: 'POST',
     path: '/calcStatsGlobal',
   }),
   calcStats: new Method({
-    method: 'GET',
+    method: 'POST',
     path: '/{id}/calcStats',
     urlParams: [ 'id' ]
   }),

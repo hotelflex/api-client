@@ -1,11 +1,9 @@
 var Entity = require('../../Entity');
 var Method = require('../../Method');
 var Notifications = require('./Notifications');
-var PublicConfig = require('./PublicConfig');
 
 module.exports = new Entity('systemManagers', {
   Notifications: Notifications,
-  PublicConfig: PublicConfig,
   retrieve: new Method({
     method: 'GET',
     path: '/{id}',
