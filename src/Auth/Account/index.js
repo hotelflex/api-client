@@ -21,6 +21,11 @@ module.exports = new Entity('accounts', {
     path: '/{id}/setPassword',
     urlParams: [ 'id' ]
   }),
+  activate: new Method({
+    method: 'POST',
+    path: '/{id}/activate',
+    urlParams: [ 'id' ]
+  }),
   deactivate: new Method({
     method: 'POST',
     path: '/{id}/deactivate',
