@@ -32,5 +32,10 @@ module.exports = new Entity('remarketingCampaigns', {
   }),
   search: new Method({
     method: 'GET'
-  })
+  }),
+  updateConfig: new Method({
+    method: 'POST',
+    path: '/{id}/updateConfig',
+    urlParams: [ 'id' ]
+  }),
 });
