@@ -1,7 +1,7 @@
 var Entity = require('../../Entity');
 var Method = require('../../Method');
 
-module.exports = new Entity('remarketingCampaigns', {
+module.exports = new Entity('campaigns', {
   calcStatsGlobal: new Method({
     method: 'POST',
     path: '/calcStatsGlobal',
@@ -32,5 +32,10 @@ module.exports = new Entity('remarketingCampaigns', {
   }),
   search: new Method({
     method: 'GET'
-  })
+  }),
+  update: new Method({
+    method: 'POST',
+    path: '/{id}/update',
+    urlParams: [ 'id' ]
+  }),
 });
