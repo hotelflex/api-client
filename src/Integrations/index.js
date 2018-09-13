@@ -4,5 +4,5 @@ var Opera = require('./Opera');
 
 module.exports = new Entity('INT', {
   Mews: Mews,
-  Opera: Opera,
+  Opera: Opera
 });
