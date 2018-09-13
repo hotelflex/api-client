@@ -28,5 +28,5 @@ module.exports = new Entity('systemManagers', {
     method: 'POST',
     path: '/{id}/disable',
     urlParams: [ 'id' ]
-  }),
+  })
 });
