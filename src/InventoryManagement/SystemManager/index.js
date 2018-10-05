@@ -21,6 +21,7 @@ module.exports = new Entity('systemManagers', {
   }),
   update: new Method({
     method: 'POST',
-    path: '/{id}/update'
+    path: '/{id}/update',
+    urlParams: [ 'id' ]
   })
 });
