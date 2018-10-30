@@ -23,5 +23,10 @@ module.exports = new Entity('hotels', {
     method: 'POST',
     path: '/{id}/configureIntegration',
     urlParams: [ 'id' ]
+  }),
+  update: new Method({
+    method: 'POST',
+    path: '/{id}/update',
+    urlParams: [ 'id' ]
   })
 });
