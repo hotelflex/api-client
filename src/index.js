@@ -13,6 +13,7 @@ var InventoryManagement = require('./InventoryManagement')
 var LinkTracking = require('./LinkTracking')
 var SMS = require('./SMS')
 var TripManagement = require('./TripManagement')
+var CampaignManagement = require('./CampaignManagement')
 
 var conf = {
   Auth: Auth,
@@ -24,6 +25,7 @@ var conf = {
   LinkTracking: LinkTracking,
   SMS: SMS,
   TripManagement: TripManagement,
+  CampaignManagement: CampaignManagement,
 }
 
 function convertArgsToList(argsObj) {
@@ -106,6 +108,7 @@ var sMap = {
   LNKT: true,
   SMS: true,
   TRP: true,
+  CMPN: true,
 }
 function fixSvcCode(_p) {
   var paths = _p.split('/')
