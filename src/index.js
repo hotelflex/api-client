@@ -108,7 +108,7 @@ var sMap = {
   LNKT: true,
   SMS: true,
   TRP: true,
-  CMPN: true,
+  CAMP: true,
 }
 function fixSvcCode(_p) {
   var paths = _p.split('/')
