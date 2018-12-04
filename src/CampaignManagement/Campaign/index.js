@@ -41,4 +41,9 @@ module.exports = new Entity('campaigns', {
     path: '{id}/disable',
     urlParams: ['id'],
   }),
+  update: new Method({
+    method: 'POST',
+    path: '{id}/update',
+    urlParams: ['id'],
+  }),
 })
