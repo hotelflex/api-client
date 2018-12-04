@@ -21,6 +21,16 @@ module.exports = new Entity('campaigns', {
     path: '/retrieveLCOBySM/{systemManagerId}',
     urlParams: ['systemManagerId'],
   }),
+  retrieveECIByHotel: new Method({
+    method: 'GET',
+    path: '/retrieveECIByHotel/{hotelId}',
+    urlParams: ['hotelId'],
+  }),
+  retrieveLCOByHotel: new Method({
+    method: 'GET',
+    path: '/retrieveLCOByHotel/{hotelId}',
+    urlParams: ['hotelId'],
+  }),
   enable: new Method({
     method: 'POST',
     path: '{id}/enable',
