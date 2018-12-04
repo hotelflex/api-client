@@ -1,7 +1,11 @@
 var Entity = require('../../Entity')
 var Method = require('../../Method')
+var Channel = require('./Channel')
+var WebTranslation = require('./WebTranslation')
 
 module.exports = new Entity('campaigns', {
+  Channel: Channel,
+  WebTranslation: WebTranslation,
   retrieve: new Method({
     method: 'GET',
     path: '/{id}',
