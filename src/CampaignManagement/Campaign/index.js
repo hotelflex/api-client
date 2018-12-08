@@ -6,6 +6,10 @@ var WebTranslation = require('./WebTranslation')
 module.exports = new Entity('campaigns', {
   Channel: Channel,
   WebTranslation: WebTranslation,
+  search: new Method({
+    method: 'GET',
+    path: '/',
+  }),
   retrieve: new Method({
     method: 'GET',
     path: '/{id}',
