@@ -21,4 +21,14 @@ module.exports = new Entity('systemManagers', {
     method: 'POST',
     path: '/setup',
   }),
+  fetchArrivals: new Method({
+    method: 'POST',
+    path: '/{id}/fetchArrivals',
+    urlParams: ['id'],
+  }),
+  fetchDepartures: new Method({
+    method: 'POST',
+    path: '/{id}/fetchDepartures',
+    urlParams: ['id'],
+  }),
 })
