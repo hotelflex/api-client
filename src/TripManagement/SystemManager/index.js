@@ -21,14 +21,14 @@ module.exports = new Entity('systemManagers', {
     method: 'POST',
     path: '/setup',
   }),
-  fetchArrivals: new Method({
+  fetchEarlyArrivals: new Method({
     method: 'POST',
-    path: '/{id}/fetchArrivals',
+    path: '/{id}/fetchEarlyArrivals',
     urlParams: ['id'],
   }),
-  fetchDepartures: new Method({
+  fetchLateDepartures: new Method({
     method: 'POST',
-    path: '/{id}/fetchDepartures',
+    path: '/{id}/fetchLateDepartures',
     urlParams: ['id'],
   }),
 })
