@@ -5,27 +5,21 @@ var Entity = require('./Entity')
 var Method = require('./Method')
 var ApiError = require('./ApiError')
 var Auth = require('./Auth')
-var Cron = require('./Cron')
-var Email = require('./Email')
+var CampaignManagement = require('./CampaignManagement')
 var HotelManagement = require('./HotelManagement')
 var Integrations = require('./Integrations')
 var InventoryManagement = require('./InventoryManagement')
-var LinkTracking = require('./LinkTracking')
-var SMS = require('./SMS')
 var TripManagement = require('./TripManagement')
-var CampaignManagement = require('./CampaignManagement')
+var UserManagement = require('./UserManagement')
 
 var conf = {
   Auth: Auth,
-  Cron: Cron,
-  Email: Email,
+  CampaignManagement: CampaignManagement,
   HotelManagement: HotelManagement,
   Integrations: Integrations,
   InventoryManagement: InventoryManagement,
-  LinkTracking: LinkTracking,
-  SMS: SMS,
   TripManagement: TripManagement,
-  CampaignManagement: CampaignManagement,
+  UserManagement: UserManagement,
 }
 
 function convertArgsToList(argsObj) {
@@ -40,8 +34,6 @@ function convertArgsToList(argsObj) {
 function getApiUrl(environment) {
   if (environment === 'production') {
     return 'https://api.hotelflex.io'
-  } else if (environment === 'staging') {
-    return 'https://api.flexfactory.co'
   } else {
     return 'http://localhost:5050'
   }
@@ -100,13 +92,9 @@ function request(method, p, data, opts, environment, authToken) {
 
 var sMap = {
   AU: true,
-  CRON: true,
-  EM: true,
   HM: true,
   INT: { MEWS: true, OPERA: true },
   INV: true,
-  LNKT: true,
-  SMS: true,
   TRP: true,
   CAMP: true,
 }

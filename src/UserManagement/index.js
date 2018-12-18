@@ -1,8 +1,8 @@
 var Entity = require('../Entity')
 var SystemManager = require('./SystemManager')
-var Trip = require('./Trip')
+var User = require('./User')
 
-module.exports = new Entity('TRP', {
+module.exports = new Entity('USER', {
   SystemManager: SystemManager,
-  Trip: Trip,
+  User: User,
 })
