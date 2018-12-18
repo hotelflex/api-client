@@ -34,4 +34,9 @@ module.exports = new Entity('systemManagers', {
     path: '/{id}/fetchLatestReports',
     urlParams: ['id'],
   }),
+  update: new Method({
+    method: 'POST',
+    path: '/{id}/update',
+    urlParams: ['id'],
+  }),
 })
