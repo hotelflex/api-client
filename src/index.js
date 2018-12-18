@@ -92,11 +92,12 @@ function request(method, p, data, opts, environment, authToken) {
 
 var sMap = {
   AU: true,
+  CAMP: true,
   HM: true,
   INT: { MEWS: true, OPERA: true },
   INV: true,
   TRP: true,
-  CAMP: true,
+  USER: true,
 }
 function fixSvcCode(_p) {
   var paths = _p.split('/')
