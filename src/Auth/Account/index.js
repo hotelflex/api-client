@@ -9,6 +9,10 @@ module.exports = new Entity('accounts', {
     path: '/{id}',
     urlParams: [ 'id' ]
   }),
+  retrieveByEmail: new Method({
+    method: 'POST',
+    path: '/retrieveByEmail'
+  }),
   search: new Method({
     method: 'GET'
   }),
