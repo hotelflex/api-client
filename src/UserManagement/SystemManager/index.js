@@ -18,5 +18,15 @@ module.exports = new Entity('systemManagers', {
   retrieveByHotel: new Method({
     method: 'POST',
     path: '/retrieveByHotel',
-  }), 
+  }),
+  fetchInvites: new Method({
+    method: 'GET',
+    path: '/{id}/fetchInvites',
+    urlParams: ['id'],
+  }),
+  fetchUsers: new Method({
+    method: 'GET',
+    path: '/{id}/fetchUsers',
+    urlParams: ['id'],
+  }),
 })
