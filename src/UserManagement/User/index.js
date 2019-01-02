@@ -8,7 +8,7 @@ module.exports = new Entity('users', {
   }),
   archive: new Method({
     method: 'POST',
-    path: '/:id/archive',
+    path: '/{id}/archive',
     urlParams: ['id'],
   }),
 })

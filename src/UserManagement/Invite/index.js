@@ -8,7 +8,7 @@ module.exports = new Entity('invites', {
   }),
   verify: new Method({
     method: 'POST',
-    path: '/:id/verify',
+    path: '/{id}/verify',
     urlParams: ['id'],
   }),
 })
