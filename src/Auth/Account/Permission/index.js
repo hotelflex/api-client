@@ -11,5 +11,5 @@ module.exports = new Entity('{accountId}/permissions', {
     method: 'POST',
     path: '/{permissionId}/remove',
     urlParams: [ 'accountId', 'permissionId' ]
-  })
+  }),
 });

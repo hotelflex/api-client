@@ -11,4 +11,9 @@ module.exports = new Entity('invites', {
     path: '/{id}/verify',
     urlParams: ['id'],
   }),
+  cancel: new Method({
+    method: 'POST',
+    path: '/{id}/cancel',
+    urlParams: ['id'],
+  }),
 })
