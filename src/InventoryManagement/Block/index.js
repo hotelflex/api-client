@@ -6,4 +6,8 @@ module.exports = new Entity('blocks', {
     method: 'POST',
     path: '/peek',
   }),
+  create: new Method({
+    method: 'POST',
+    path: '/create',
+  }),
 })

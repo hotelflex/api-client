@@ -14,9 +14,19 @@ module.exports = new Entity('trips', {
   search: new Method({
     method: 'GET',
   }),
-  updateTimes: new Method({
+  updateArrival: new Method({
     method: 'POST',
-    path: '/{id}/updateTimes',
+    path: '/{id}/updateArrival',
+    urlParams: ['id'],
+  }),
+  updateDeparture: new Method({
+    method: 'POST',
+    path: '/{id}/updateDeparture',
+    urlParams: ['id'],
+  }),
+  updateGuestInfo: new Method({
+    method: 'POST',
+    path: '/{id}/updateGuestInfo',
     urlParams: ['id'],
   }),
 })
