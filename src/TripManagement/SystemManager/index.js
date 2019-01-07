@@ -17,16 +17,18 @@ module.exports = new Entity('systemManagers', {
   search: new Method({
     method: 'GET',
   }),
+  fetchEarlyArrivalsByHotel: new Method({
+    method: 'GET',
+    path: '/fetchEarlyArrivalsByHotel/{hotelId}',
+    urlParams: ['hotelId'],
+  }),
+  fetchLateDeparturesByHotel: new Method({
+    method: 'GET',
+    path: '/fetchLateDeparturesByHotel/{hotelId}',
+    urlParams: ['hotelId'],
+  }),
   setup: new Method({
     method: 'POST',
     path: '/setup',
-  }),
-  fetchEarlyArrivalsByHotel: new Method({
-    method: 'POST',
-    path: '/fetchEarlyArrivalsByHotel',
-  }),
-  fetchLateDeparturesByHotel: new Method({
-    method: 'POST',
-    path: '/fetchLateDeparturesByHotel',
   }),
 })

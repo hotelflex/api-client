@@ -13,11 +13,11 @@ module.exports = new Entity('systemManagers', {
   }),
   search: new Method({
     method: 'GET',
-    path: '/',
   }),
   retrieveByHotel: new Method({
-    method: 'POST',
-    path: '/retrieveByHotel',
+    method: 'GET',
+    path: '/retrieveByHotel/{hotelId}',
+    urlParams: ['hotelId'],
   }),
   fetchInvites: new Method({
     method: 'GET',
