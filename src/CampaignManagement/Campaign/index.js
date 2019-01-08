@@ -50,4 +50,9 @@ module.exports = new Entity('campaigns', {
     path: '{id}/update',
     urlParams: ['id'],
   }),
+  getInteractions: new Method({
+    method: 'GET',
+    path: '/{id}/getInteractions',
+    urlParams: ['id'],
+  }),
 })
