@@ -35,6 +35,11 @@ module.exports = new Entity('campaigns', {
     path: '/retrieveLCOByHotel/{hotelId}',
     urlParams: ['hotelId'],
   }),
+  getInteractions: new Method({
+    method: 'GET',
+    path: '/{id}/getInteractions',
+    urlParams: ['id'],
+  }),
   enable: new Method({
     method: 'POST',
     path: '{id}/enable',
@@ -48,11 +53,6 @@ module.exports = new Entity('campaigns', {
   update: new Method({
     method: 'POST',
     path: '{id}/update',
-    urlParams: ['id'],
-  }),
-  getInteractions: new Method({
-    method: 'GET',
-    path: '/{id}/getInteractions',
     urlParams: ['id'],
   }),
 })

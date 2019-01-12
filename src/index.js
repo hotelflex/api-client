@@ -4,6 +4,7 @@ var utils = require('./utils')
 var Entity = require('./Entity')
 var Method = require('./Method')
 var ApiError = require('./ApiError')
+var Analytics = require('./Analytics')
 var Auth = require('./Auth')
 var CampaignManagement = require('./CampaignManagement')
 var HotelManagement = require('./HotelManagement')
@@ -13,6 +14,7 @@ var TripManagement = require('./TripManagement')
 var UserManagement = require('./UserManagement')
 
 var conf = {
+  Analytics: Analytics,
   Auth: Auth,
   CampaignManagement: CampaignManagement,
   HotelManagement: HotelManagement,
@@ -98,6 +100,7 @@ var sMap = {
   INV: true,
   TRP: true,
   USER: true,
+  ANYL: true,
 }
 function fixSvcCode(_p) {
   var paths = _p.split('/')
