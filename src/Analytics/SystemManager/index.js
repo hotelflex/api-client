@@ -24,4 +24,8 @@ module.exports = new Entity('systemManagers', {
     method: 'GET',
     path: '/weeklySummaryForPlatform',
   }),
+  setup: new Method({
+    method: 'POST',
+    path: '/setup',
+  }),
 })
