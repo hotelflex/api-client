@@ -11,12 +11,4 @@ module.exports = new Entity('reports', {
     method: 'GET',
     path: '/retrieveForPlatform',
   }),
-  generateForHotel: new Method({
-    method: 'GET',
-    path: '/generateForHotel',
-  }),
-  generateForPlatform: new Method({
-    method: 'GET',
-    path: '/generateForPlatform',
-  }),
 })

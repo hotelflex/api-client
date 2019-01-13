@@ -24,18 +24,4 @@ module.exports = new Entity('systemManagers', {
     method: 'GET',
     path: '/weeklySummaryForPlatform',
   }),
-  setup: new Method({
-    method: 'POST',
-    path: '/setup',
-  }),
-  syncFromBucket: new Method({
-    method: 'POST',
-    path: '/{id}/syncFromBucket',
-    urlParams: ['id'],
-  }),
-  syncRoomCount: new Method({
-    method: 'POST',
-    path: '/{id}/syncRoomCount',
-    urlParams: ['id'],
-  }),
 })
