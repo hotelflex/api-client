@@ -29,4 +29,8 @@ module.exports = new Entity('systemManagers', {
     method: 'POST',
     path: '/setup',
   }),
+  checkProperty: new Method({
+    method: 'POST',
+    path: '/checkProperty',
+  }),
 })
