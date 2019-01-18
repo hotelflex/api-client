@@ -1,7 +1,9 @@
 var Entity = require('../../Entity');
 var Method = require('../../Method');
+var RoomType = require('./RoomType');
 
 module.exports = new Entity('systemManagers', {
+  RoomType: RoomType,
   retrieve: new Method({
     method: 'GET',
     path: '/{id}',
