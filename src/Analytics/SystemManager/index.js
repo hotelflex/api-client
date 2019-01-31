@@ -15,14 +15,19 @@ module.exports = new Entity('systemManagers', {
   search: new Method({
     method: 'GET',
   }),
-  weeklySummary: new Method({
+  getReport: new Method({
     method: 'GET',
-    path: '/{id}/weeklySummary',
+    path: '/{id}/getReport',
     urlParams: ['id'],
   }),
-  weeklySummaryForPlatform: new Method({
+  getReportByHotel: new Method({
     method: 'GET',
-    path: '/weeklySummaryForPlatform',
+    path: '/getReportByHotel/{hotelId}',
+    urlParams: ['hotelId'],
+  }),
+  getPlatformReport: new Method({
+    method: 'GET',
+    path: '/getPlatformReport',
   }),
   setup: new Method({
     method: 'POST',
