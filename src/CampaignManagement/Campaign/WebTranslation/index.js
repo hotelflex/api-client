@@ -7,4 +7,9 @@ module.exports = new Entity('{campaignId}/webTranslations', {
     path: '{lang}/update',
     urlParams: ['campaignId', 'lang'],
   }),
+  retrieve: new Method({
+    method: 'GET',
+    path: '{lang}',
+    urlParams: ['campaignId', 'lang'],
+  }),
 })
