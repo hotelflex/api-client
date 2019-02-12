@@ -12,6 +12,7 @@ var Integrations = require('./Integrations')
 var InventoryManagement = require('./InventoryManagement')
 var TripManagement = require('./TripManagement')
 var UserManagement = require('./UserManagement')
+var Accounting = require('./Accounting')
 
 var conf = {
   Analytics: Analytics,
@@ -22,6 +23,7 @@ var conf = {
   InventoryManagement: InventoryManagement,
   TripManagement: TripManagement,
   UserManagement: UserManagement,
+  Accounting: Accounting,
 }
 
 function convertArgsToList(argsObj) {
@@ -101,6 +103,7 @@ var sMap = {
   TRP: true,
   USER: true,
   ANYL: true,
+  ACC: true,
 }
 function fixSvcCode(_p) {
   var paths = _p.split('/')
