@@ -15,4 +15,8 @@ module.exports = new Entity('systemManagers', {
   search: new Method({
     method: 'GET',
   }),
+  setup: new Method({
+    method: 'POST',
+    path: '/setup',
+  }),
 })
