@@ -19,4 +19,8 @@ module.exports = new Entity('systemManagers', {
     method: 'POST',
     path: '/setup',
   }),
+  getExchangeRates: new Method({
+    method: 'POST',
+    path: '/getExchangeRates',
+  }),
 })
