@@ -19,6 +19,21 @@ module.exports = new Entity('systemManagers', {
     method: 'POST',
     path: '/setup',
   }),
+  update: new Method({
+    method: 'POST',
+    path: '/{id}/update',
+    urlParams: ['id'],
+  }),
+  enableAutoBilling: new Method({
+    method: 'POST',
+    path: '/{id}/enableAutoBilling',
+    urlParams: ['id'],
+  }),
+  disableAutoBilling: new Method({
+    method: 'POST',
+    path: '/{id}/disableAutoBilling',
+    urlParams: ['id'],
+  }),
   getExchangeRates: new Method({
     method: 'POST',
     path: '/getExchangeRates',
