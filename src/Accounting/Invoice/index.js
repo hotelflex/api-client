@@ -19,4 +19,9 @@ module.exports = new Entity('invoices', {
     method: 'POST',
     path: '/create',
   }),
+  retract: new Method({
+    method: 'POST',
+    path: '/{id}/retract',
+    urlParams: ['id'],
+  }),
 })
