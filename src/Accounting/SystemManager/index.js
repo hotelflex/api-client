@@ -19,6 +19,11 @@ module.exports = new Entity('systemManagers', {
     method: 'POST',
     path: '/setup',
   }),
+  setupXero: new Method({
+    method: 'POST',
+    path: '/{id}/setupXero',
+    urlParams: ['id'],
+  }),
   update: new Method({
     method: 'POST',
     path: '/{id}/update',
