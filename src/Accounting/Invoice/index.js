@@ -24,4 +24,9 @@ module.exports = new Entity('invoices', {
     path: '/{id}/cancel',
     urlParams: ['id'],
   }),
+  send: new Method({
+    method: 'POST',
+    path: '/{id}/send',
+    urlParams: ['id'],
+  }),
 })
