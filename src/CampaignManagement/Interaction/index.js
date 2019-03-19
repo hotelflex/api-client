@@ -18,8 +18,7 @@ module.exports = new Entity('interactions', {
   }),
   fetchBookingAppDataByShortId: new Method({
     method: 'POST',
-    path: '/{id}/fetchBookingAppDataByShortId',
-    urlParams: ['id'],
+    path: '/fetchBookingAppDataByShortId',
   }),
   fetchBookingStage: new Method({
     method: 'GET',
