@@ -30,4 +30,9 @@ module.exports = new Entity('interactions', {
     path: '/{id}/reserve',
     urlParams: ['id'],
   }),
+  reserve2: new Method({
+    method: 'POST',
+    path: '/{id}/reserve2',
+    urlParams: ['id'],
+  }),
 })
