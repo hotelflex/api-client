@@ -10,6 +10,10 @@ module.exports = new Entity('transactions', {
   search: new Method({
     method: 'GET',
   }),
+  getByTripIds: new Method({
+    method: 'POST',
+    path: '/getByTripIds',
+  }),
   cancel: new Method({
     method: 'POST',
     path: '/{id}/cancel',
