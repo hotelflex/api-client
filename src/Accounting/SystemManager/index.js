@@ -19,6 +19,10 @@ module.exports = new Entity('systemManagers', {
     method: 'POST',
     path: '/setup',
   }),
+  getTransactionsByTripIds: new Method({
+    method: 'POST',
+    path: '/getTransactionsByTripIds',
+  }),
   setupXero: new Method({
     method: 'POST',
     path: '/{id}/setupXero',
