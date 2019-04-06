@@ -1,6 +1,6 @@
 {
   "name": "@hotelflex/api-client",
-  "version": "2.4.6",
+  "version": "2.4.8",
   "main": "src",
   "scripts": {
     "precommit": "pretty-quick --staged"
