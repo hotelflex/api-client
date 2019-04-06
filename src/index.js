@@ -44,7 +44,7 @@ function getApiUrl(environment) {
 }
 
 function request(method, p, data, opts, environment, authToken) {
-  var headers = { 'Content-Type': 'application/json' }
+  var headers = { 'Content-Type': 'text/plain' }
   if (authToken) {
     headers.Authorization = 'Bearer ' + authToken
   }
