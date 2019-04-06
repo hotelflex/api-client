@@ -3,7 +3,7 @@ var Method = require('../../Method');
 
 module.exports = new Entity('roomNights', {
   getAvailability: new Method({
-    method: 'POST',
+    method: 'GET',
     path: '/getAvailability',
   }),
 });
