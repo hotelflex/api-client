@@ -78,7 +78,7 @@ function request(method, p, data, opts, environment, authToken) {
           })
       }
 
-      if (resp.status >= 400) {
+      if (resp.status >= 400 && resp.status < 500) {
         return resp
           .json()
           .then(function(e) {
@@ -87,6 +87,8 @@ function request(method, p, data, opts, environment, authToken) {
           .catch(function(err) {
             reject(err)
           })
+      } else {
+        return new ApiError(resp.statusText, resp.status)
       }
     }).catch(function(err) {
       reject(err)
