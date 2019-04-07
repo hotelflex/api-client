@@ -13,7 +13,8 @@ module.exports = new Entity('interactions', {
   }),
   fetchBookingAppData: new Method({
     method: 'GET',
-    path: '/fetchBookingAppData',
+    path: '/fetchBookingAppData/{shortId}',
+    urlParams: ['shortId'],
   }),
   fetchBookingAppDataByShortId: new Method({
     method: 'POST',
@@ -27,11 +28,6 @@ module.exports = new Entity('interactions', {
   reserve: new Method({
     method: 'POST',
     path: '/{id}/reserve',
-    urlParams: ['id'],
-  }),
-  reserve2: new Method({
-    method: 'POST',
-    path: '/{id}/reserve2',
     urlParams: ['id'],
   }),
 })
