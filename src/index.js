@@ -43,10 +43,13 @@ function getApiUrl(environment) {
   }
 }
 
-function request(method, p, data, opts, environment, authToken) {
-  var headers = { 'Content-Type': 'text/plain' }
+function request(method, p, headers, data, environment, authToken) {
   if (authToken) {
     headers.Authorization = 'Bearer ' + authToken
+  }
+
+  if(method === 'POST' && !headers['Content-Type']) {
+    headers['Content-Type'] = 'application/json'
   }
 
   var apiUrl = getApiUrl(environment)
@@ -138,10 +141,9 @@ function createMethod(_path, opts, environment, authToken) {
     }
 
     var _data = utils.getDataFromArgs(args)
-    var _opts = utils.getOptionsFromArgs(args)
 
     var p = urlIP(urlData).replace(/\\/g, '/')
-    return request(opts.method, p, _data, _opts, environment, authToken)
+    return request(opts.method, p, opts.customHeaders, _data, environment, authToken)
   }
 }
 
