@@ -1,7 +1,9 @@
 var Entity = require('../../Entity')
 var Method = require('../../Method')
+var Notification = require('./Notification')
 
 module.exports = new Entity('systemManagers', {
+  Notification: Notification,
   retrieve: new Method({
     method: 'GET',
     path: '/{id}',
