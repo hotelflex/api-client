@@ -19,9 +19,9 @@ module.exports = new Entity('invoices', {
     method: 'POST',
     path: '/create',
   }),
-  cancel: new Method({
+  cancelTransactions: new Method({
     method: 'POST',
-    path: '/{id}/cancel',
+    path: '/{id}/cancelTransactions',
     urlParams: ['id'],
   }),
   send: new Method({

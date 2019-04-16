@@ -6,7 +6,7 @@
     "precommit": "pretty-quick --staged"
   },
   "dependencies": {
-    "isomorphic-fetch": "^2.2.1",
+    "isomorphic-fetch": "^2.2.2",
     "lodash": "^4.17.4",
     "lodash.isplainobject": "^4.0.6",
     "moment": "^2.18.1",
