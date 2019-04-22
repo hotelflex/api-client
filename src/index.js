@@ -54,13 +54,13 @@ function request(method, p, headers, data, environment, authToken) {
 
   var apiUrl = getApiUrl(environment)
 
-  var fP
+  var fP, reqPath
   if (method === 'GET') {
     var query = utils.stringifyRequestData(data)
-    var reqPath = apiUrl + '/' + p + '?' + query
+    reqPath = apiUrl + '/' + p + '?' + query
     fP = fetch(reqPath, { method: method, headers: headers })
   } else {
-    var reqPath = apiUrl + '/' + p
+    reqPath = apiUrl + '/' + p
     var body = JSON.stringify(data)
     fP = fetch(reqPath, { method: method, body: body, headers: headers })
   }
@@ -91,7 +91,7 @@ function request(method, p, headers, data, environment, authToken) {
             reject(err)
           })
       } else {
-        return new ApiError(resp.statusText, resp.status)
+        reject(new ApiError(`${resp.statusText} at ${reqPath}`, resp.status))
       }
     }).catch(function(err) {
       reject(err)
