@@ -91,7 +91,7 @@ function request(method, p, headers, data, environment, authToken) {
             reject(err)
           })
       } else {
-        reject(new ApiError(`${resp.statusText} at ${reqPath}`, resp.status))
+        reject(new ApiError(resp.statusText + ' at ' + reqPath, resp.status))
       }
     }).catch(function(err) {
       reject(err)
