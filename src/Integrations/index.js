@@ -1,8 +1,5 @@
-var Entity = require('../Entity');
-var Mews = require('./Mews');
-var Opera = require('./Opera');
+let Osr = require('./Osr')
 
-module.exports = new Entity('INT', {
-  Mews: Mews,
-  Opera: Opera
-});
+module.exports = {
+  Osr: Osr,
+}

@@ -4,26 +4,12 @@ var utils = require('./utils')
 var Entity = require('./Entity')
 var Method = require('./Method')
 var ApiError = require('./ApiError')
-var Analytics = require('./Analytics')
 var Auth = require('./Auth')
-var CampaignManagement = require('./CampaignManagement')
-var HotelManagement = require('./HotelManagement')
 var Integrations = require('./Integrations')
-var InventoryManagement = require('./InventoryManagement')
-var TripManagement = require('./TripManagement')
-var UserManagement = require('./UserManagement')
-var Accounting = require('./Accounting')
 
-var conf = {
-  Analytics: Analytics,
+var services = {
   Auth: Auth,
-  CampaignManagement: CampaignManagement,
-  HotelManagement: HotelManagement,
-  Integrations: Integrations,
-  InventoryManagement: InventoryManagement,
-  TripManagement: TripManagement,
-  UserManagement: UserManagement,
-  Accounting: Accounting,
+  INT_OSR: Integrations.Osr,
 }
 
 function convertArgsToList(argsObj) {
@@ -48,7 +34,7 @@ function request(method, p, headers, data, environment, authToken) {
     headers.Authorization = 'Bearer ' + authToken
   }
 
-  if(method === 'POST' && !headers['Content-Type']) {
+  if (method === 'POST' && !headers['Content-Type']) {
     headers['Content-Type'] = 'application/json'
   }
 
@@ -101,14 +87,7 @@ function request(method, p, headers, data, environment, authToken) {
 
 var sMap = {
   AU: true,
-  CAMP: true,
-  HM: true,
-  INT: { MEWS: true, OPERA: true },
-  INV: true,
-  TRP: true,
-  USER: true,
-  ANYL: true,
-  ACC: true,
+  INT_OSR: true,
 }
 function fixSvcCode(_p) {
   var paths = _p.split('/')
@@ -143,7 +122,14 @@ function createMethod(_path, opts, environment, authToken) {
     var _data = utils.getDataFromArgs(args)
 
     var p = urlIP(urlData).replace(/\\/g, '/')
-    return request(opts.method, p, opts.customHeaders, _data, environment, authToken)
+    return request(
+      opts.method,
+      p,
+      opts.customHeaders,
+      _data,
+      environment,
+      authToken,
+    )
   }
 }
 
@@ -171,8 +157,8 @@ function Client(environment, authToken) {
   }
   this.environment = environment
 
-  Object.keys(conf).forEach(function(k) {
-    self[k] = processChild('', conf[k], self)
+  Object.keys(services).forEach(function(k) {
+    self[k] = processChild('', services[k], self)
   })
 }
 
