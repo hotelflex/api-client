@@ -4,11 +4,9 @@ var utils = require('./utils')
 var Entity = require('./Entity')
 var Method = require('./Method')
 var ApiError = require('./ApiError')
-var Auth = require('./Auth')
 var Integrations = require('./Integrations')
 
 var services = {
-  Auth: Auth,
   INT_OSR: Integrations.Osr,
 }
 
@@ -23,7 +21,7 @@ function convertArgsToList(argsObj) {
 
 function getApiUrl(environment) {
   if (environment === 'production') {
-    return 'https://api.hotelflex.io'
+    return 'https://api.hotelbox.xyz'
   } else {
     return 'http://localhost:5050'
   }
@@ -86,7 +84,6 @@ function request(method, p, headers, data, environment, authToken) {
 }
 
 var sMap = {
-  AU: true,
   INT_OSR: true,
 }
 function fixSvcCode(_p) {
